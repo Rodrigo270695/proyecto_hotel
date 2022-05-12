@@ -1,0 +1,101 @@
+{% extends './base.html' %}
+
+
+
+{% block body %}
+
+
+<body>
+
+
+    <!-- Page header -->
+    <div class="full-box page-header">
+        <h3 class="text-left">
+            <i class="fas fa-sync-alt fa-fw"></i> &nbsp; ACTUALIZAR HABITACION
+        </h3>
+        <p class="text-justify">
+            Lorem ipsum dolor sit amet, consectetur adipisicing elit. Eaque laudantium necessitatibus eius iure adipisci
+            modi distinctio. Earum repellat iste et aut, ullam, animi similique sed soluta tempore cum quis corporis!
+        </p>
+    </div>
+    <div class="container-fluid">
+        <ul class="full-box list-unstyled page-nav-tabs">
+            <li>
+                <a href="{{url_for('nuevahabitacion')}}"><i class="fas fa-plus fa-fw"></i> &nbsp; AGREGAR HABITACION</a>
+            </li>
+            <li>
+                <a href="{{url_for('listahabitacion')}}"><i class="fas fa-clipboard-list fa-fw"></i> &nbsp; LISTA DE
+                    HABITACIONES</a>
+            </li>
+            <li>
+                <a href="item-search.html"><i class="fas fa-search fa-fw"></i> &nbsp; BUSCAR HABITACION</a>
+            </li>
+        </ul>
+    </div>
+
+    <!--CONTENT-->
+
+
+
+    <div class="container-fluid">
+
+      
+        <form method="post" action="{{url_for('actualizarhabitacion')}}" class="form-neon" autocomplete="off">
+            <fieldset>
+
+
+                <legend><i class="far fa-plus-square"></i> &nbsp; Información de la Habitacion</legend>
+               
+                <div class="container-fluid">
+                    <div class="row">
+
+
+                        <input type="hidden" value="{{habitacion[0]}}" pattern="[a-zA-Z0-9-]{1,45}" class="form-control"
+                            name="item_codigo" id="item_codigo" maxlength="45">
+                        <div class="col-12 col-md-4">
+                            <div class="form-group">
+                                <label for="item_numero" class="bmd-label-floating">Numero</label>
+                                <input type="text" value="{{habitacion[1]}}"
+                                    pattern="[a-zA-záéíóúÁÉÍÓÚñÑ0-9 ]{1,140}" class="form-control" name="item_numero"
+                                    id="item_numero" maxlength="140">
+                            </div>
+                        </div>
+
+                        <div class="col-12 col-md-6">
+                            <label for="item_tipo" class="bmd-label-floating">Tipo</label>
+                            <select class="form-control"  value="{{habitacion[2]}}" name="item_tipo" id="item_tipo">
+                                <option value="" selected="" disabled="">Seleccione una opción</option>
+                                <option  value="Presidencial">Presidencial</option>
+                                <option value="Simple">Simple</option>
+                            </select>
+                        </div>
+
+                        <div class="col-12 col-md-6">
+                            <label for="item_estado" class="bmd-label-floating">Estado</label>
+                            <select class="form-control" value="{{habitacion[3]}}" name="item_estado" id="item_estado">
+                                <option value="" selected="" disabled="">Seleccione una opción</option>
+                                <option value="Disponible">Disponible</option>
+                                <option value="No disponible">No disponible</option>
+                            </select>
+                        </div>
+
+
+                    </div>
+                </div>
+
+               
+            </fieldset>
+
+
+            <br><br><br>
+            <p class="text-center" style="margin-top: 40px;">
+                <button type="submit" class="btn btn-raised btn-success btn-sm"><i class="fas fa-sync-alt"></i> &nbsp;
+                    ACTUALIZAR</button>
+            </p>
+        </form>
+        
+    </div>
+
+
+</body>
+{% endblock %}

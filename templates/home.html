@@ -1,0 +1,73 @@
+{% extends './base.html' %}
+{% block title%} Home {% endblock%} 
+
+
+{% block body %}
+  
+<body>
+	
+
+
+
+			<!-- Page header -->
+			<div class="full-box page-header">
+				<h3 class="text-left">
+					<i class="fab fa-dashcube fa-fw"></i> &nbsp; SYSTEM WEB HOTEL
+				</h3>
+				<p class="text-justify">
+					La implementación de un sistema web para el proceso gestion hotelera, automatizará el trabajo ya que el usuario solo
+tendrá que ingresar los datos en el software para que se guarden en la base de datos, ya que contiene apartados que
+facilitarán la interacción del usuario con el sistema
+				</p>
+			</div>
+			
+			<!-- Content -->
+			<div class="full-box tile-container">
+
+				<a href="{{url_for('nuevo_cliente')}}" class="tile">
+					<div class="tile-tittle">Clientes</div>
+					<div class="tile-icon">
+						<i class="fas fa-users fa-fw"></i>
+						
+					</div>
+				</a>
+
+				<a href="{{url_for('listahabitacion')}}" class="tile">
+					<div class="tile-tittle">Habitacion</div>
+					<div class="tile-icon">
+						<i class="fas fa-bed fa-fw"></i>
+						
+					</div>
+				</a>
+
+				<a href="reservation-list.html" class="tile">
+					<div class="tile-tittle">Reservaciones</div>
+					<div class="tile-icon">
+						<i class="fas fa-hotel fa-fw"></i>
+						
+					</div>
+				</a>
+
+				<a href="user-list.html" class="tile">
+					<div class="tile-tittle">Usuarios</div>
+					<div class="tile-icon">
+						<i class="fas fa-user-secret fa-fw"></i>
+						
+					</div>
+				</a>
+
+				<a href="company.html" class="tile">
+					<div class="tile-tittle">Empresa</div>
+					<div class="tile-icon">
+						<i class="fas fa-store-alt fa-fw"></i>
+						
+					</div>
+				</a>
+				
+			</div>
+
+    
+</body>
+	
+
+    {% endblock %}
